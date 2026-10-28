@@ -13,3 +13,14 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Archivos locales, resultados de compilación y credenciales
+/.idea/
+.kotlin/
+**/build/
+*.apk
+*.aab
+*.jks
+*.keystore
+/keystore.properties
+/secrets.properties

@@ -22,6 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Datos-internet-android"
+rootProject.name = "Mars Photos"
 include(":app")
- 
