@@ -2,11 +2,13 @@
 
 Fecha: 28 de octubre de 2026, zona America/Guayaquil.
 
-## Alcance autorizado para esta sesión
+## Alcance de la primera sesión de desarrollo
 
 El usuario indicó: «Por ahora no hagas pruebas graficas, solo el desarrollo, despues hacemos eso». Por ello se realizaron compilaciones y análisis estático sin iniciar la app, sin emulador y sin inspección visual. No se ejecutaron las pruebas unitarias ni instrumentadas existentes.
 
-## Comprobaciones ejecutadas
+Posteriormente autorizó las pruebas gráficas de la app en ejecución. Se completaron en un teléfono físico con Android 15 y se corrigió el contraste usando exactamente el tema de `repo-starter`. El detalle y las capturas están en [PRUEBAS_GRAFICAS.md](PRUEBAS_GRAFICAS.md).
+
+## Comprobaciones de la primera sesión
 
 | Comprobación | Resultado observado |
 | --- | --- |
@@ -41,18 +43,21 @@ El APK de desarrollo se generó localmente en `app/build/outputs/apk/debug/app-d
 - **Coil:** aunque figura entre las dependencias de `repo-starter`, se excluye expresamente porque esta práctica solo obtiene metadatos y muestra un conteo.
 - **Pruebas existentes:** se preservan los ejemplos generados por Android Studio y se adapta la aserción del paquete a `com.example.marsphotos`. No se añaden nuevas pruebas ni se ejecutan estos ejemplos.
 
-## Pendiente para la sesión de pruebas gráficas
+## Estado tras la sesión de pruebas gráficas
 
 | Prueba del codelab | Estado |
 | --- | --- |
-| Sincronización interactiva y apertura en Android Studio | Pendiente; la configuración y resolución de Gradle se comprobaron por su wrapper. |
+| Proyecto abierto en Android Studio | Comprobado visualmente con el teléfono conectado. La resolución y compilación se verificaron mediante Gradle; no se volvió a disparar una sincronización desde la interfaz. |
 | Marcador de posición inicial en dispositivo | No ejecutada. Puede revisarse en el commit de preparación. |
 | Falta del permiso INTERNET y SecurityException | No ejecutada. El punto intermedio está conservado en el historial. |
 | JSON sin procesar visible en Text | No ejecutada. El punto intermedio está conservado en el historial. |
 | Cierre sin conexión antes de capturar IOException | No ejecutada; no se registró ni se simuló Logcat. |
-| Pantalla de carga | Implementada; observación gráfica pendiente. |
-| Cantidad real de fotos recibidas y mensaje final | Implementados; respuesta real y observación en pantalla pendientes. |
-| Pantalla de error en modo avión, sin cierre | Implementada; prueba en dispositivo pendiente. |
-| Restaurar Internet y relanzar la app | Pendiente. El codelab no solicita recuperación automática ni botón de reintento. |
+| Pantalla de carga | Comprobada y capturada durante un arranque frío real. |
+| Cantidad real de fotos recibidas y mensaje final | Comprobada: Success con 838 fotos, coincidente con una consulta HTTP 200 al endpoint oficial. |
+| Pantalla de error en modo avión, sin cierre | Comprobada con modo avión activo y Wi-Fi desactivado: Failed to load, proceso vivo y sin registros de cierre fatal para ese proceso en Logcat. |
+| Restaurar Internet y relanzar la app | Comprobada: se restauraron los estados originales y volvió a aparecer Success con 838 fotos. |
+| Salir con Atrás y reabrir | Comprobada: salida al lanzador y reapertura con conteo correcto. |
+| Contraste de la barra del sistema | Corregido y comprobado; Theme.kt coincide con repo-starter. |
+| Compilación posterior a la corrección | Gradle 9.5.0: BUILD SUCCESSFUL; Lint: 0 errores, 25 advertencias. La advertencia del compilador sobre statusBarColor desaparece al retirar el bloque antiguo. |
 
-No se atribuye ningún número de fotografías al servidor en esta sesión. La compilación y el análisis estático no sustituyen las comprobaciones anteriores.
+La primera sesión no atribuyó ningún conteo al servidor. En la sesión gráfica sí se observaron 838 registros, con evidencia de pantalla y comprobación del endpoint. Las demostraciones didácticas de versiones intermedias siguen señaladas como no ejecutadas. No se añadieron mecanismos de recuperación automática, pruebas nuevas ni funcionalidades ajenas al codelab.

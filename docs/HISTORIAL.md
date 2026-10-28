@@ -17,8 +17,10 @@ Todos los commits son reales y sus cuerpos explicativos están redactados en esp
 | `88564e8` | `refactor: reemplazar conversor escalar por deserialización Kotlinx Serialization` | Usa Json, el tipo application/json y `List<MarsPhoto>`. |
 | `731f89e` | `feat: mostrar cantidad de fotografías recuperadas desde el servicio REST` | Forma el mensaje exacto con `listResult.size`. |
 | `ea309a4` | `fix: alinear manejo de respuestas HTTP con la solución oficial` | Incorpora Loading explícito y captura HttpException tras comparar con `repo-starter`. |
+| `2c98bc8` | `docs: documentar configuración funcionamiento e historial de Mars Photos` | Registra configuración, análisis, historial y validaciones iniciales, con pruebas gráficas aplazadas. |
+| `352605c` | `fix: corregir contraste de la barra de estado con el tema oficial` | Tras revisar el dispositivo, adapta Theme.kt exactamente a repo-starter y comprueba que los iconos se leen sobre fondo claro. |
 
-El commit que incorpora este registro, el README y la validación es la etapa final de documentación. Su hash puede consultarse en `git log -1`; no se inserta su propio hash dentro del archivo porque eso modificaría el contenido que identifica ese mismo commit.
+El commit que actualiza este registro y añade las evidencias gráficas es la etapa actual de documentación. Su hash puede consultarse en `git log -1`; no se inserta su propio hash dentro del archivo porque eso modificaría el contenido que identifica ese mismo commit.
 
 Para consultar todos los hashes completos, mensajes, fechas y cuerpos:
 
@@ -26,4 +28,4 @@ Para consultar todos los hashes completos, mensajes, fechas y cuerpos:
 git log --reverse --format=fuller main
 ```
 
-Los puntos intermedios conservan deliberadamente la secuencia didáctica. El servicio inicialmente devuelve String y todavía no declara permiso de Internet; la sustitución del conversor y la adaptación del mensaje se registran en etapas consecutivas. El código final es el que se compila y publica en `main`. No se probaron gráficamente estos estados intermedios.
+Los puntos intermedios conservan deliberadamente la secuencia didáctica. El servicio inicialmente devuelve String y todavía no declara permiso de Internet; la sustitución del conversor y la adaptación del mensaje se registran en etapas consecutivas. El código final es el que se compila y publica en `main`. Se probaron gráficamente sus estados Loading, Success y Error y la recuperación al relanzar; las demostraciones de las versiones intermedias permanecen sin ejecutar.

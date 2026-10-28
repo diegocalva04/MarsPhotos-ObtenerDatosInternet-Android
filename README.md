@@ -46,10 +46,12 @@ Al crearse, `MarsViewModel` inicia la solicitud en `viewModelScope.launch`. `Mar
 - `:app:assembleDebug :app:lintDebug` sobre el código final: `BUILD SUCCESSFUL`; Lint informa **0 errores y 25 advertencias**.
 - Comparación del servicio, modelo, ViewModel, pantallas, recursos y configuración con las ramas oficiales `starter` y `repo-starter`.
 - Revisión del historial, diferencias e inclusión de archivos; configuraciones personales y resultados de compilación excluidos de Git.
+- Pruebas gráficas en Xiaomi 23100RN82L con Android 15: carga, éxito con 838 fotos reales, error en modo avión sin Wi-Fi, ausencia de cierre fatal, recuperación al relanzar y salida/reapertura con Atrás.
+- Corrección del contraste de la barra de estado aplicando exactamente el tema de la solución oficial `repo-starter`.
 
-**Las pruebas gráficas y la ejecución de la aplicación se aplazaron por petición del usuario.** No se ha comprobado todavía el conteo en pantalla, el modo avión, la recuperación de conexión ni las excepciones en Logcat. Tampoco se ejecutaron pruebas unitarias o instrumentadas; se conservaron las generadas en la plantilla original.
+Las pruebas gráficas se aplazaron durante la primera sesión y se completaron posteriormente con autorización del usuario. Las [capturas y resultados](docs/PRUEBAS_GRAFICAS.md) corresponden a la ejecución real del APK corregido. Los 838 registros son la respuesta observada durante la prueba; la aplicación obtiene siempre el conteo de la lista recibida. No se ejecutaron pruebas unitarias o instrumentadas; se conservaron las generadas en la plantilla original.
 
-El resultado de compilación no constituye una comprobación de la respuesta real del servidor. El [registro de validación](docs/VALIDACION.md) distingue lo comprobado de lo pendiente.
+El [registro de validación](docs/VALIDACION.md) distingue las comprobaciones iniciales, las pruebas gráficas posteriores y las demostraciones intermedias del tutorial que no se ejecutaron. El cambio local previo del wrapper a Gradle 9.8.2 se conservó fuera de estos commits; el APK probado se compiló con Gradle 9.5.0, como la configuración publicada.
 
 ## Referencias e historial
 
