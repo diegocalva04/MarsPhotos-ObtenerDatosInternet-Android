@@ -31,6 +31,6 @@ La actividad y el tema genéricos fueron sustituidos por los oficiales después 
 
 ## Criterio de fidelidad
 
-La rama `repo-starter` y la página no son idénticas: la rama guarda `MarsPhoto` en `model`, incluye Coil, captura también `HttpException` y usa otras versiones. Se priorizan el paquete `network` y las dependencias solicitadas por la página y el usuario. No se incorpora Coil. Las adaptaciones de compatibilidad y los resultados reales de compilación se documentarán en el README y el registro de validación.
+La rama `repo-starter` y la página no son idénticas: la rama guarda `MarsPhoto` en `model`, incluye Coil, captura también `HttpException` y usa otras versiones. Se priorizan el paquete `network` y las dependencias solicitadas por la página y el usuario. No se incorpora Coil. La comparación final incorpora la captura `HttpException` y la asignación explícita de `Loading` de la solución oficial. Las adaptaciones de compatibilidad y los resultados reales de compilación se documentan en el README y el registro de validación.
 
 En esta sesión el usuario aplazó todas las pruebas gráficas: no se ejecutará la app ni se probará modo avión, tampoco se afirmará haber observado pantallas o excepciones en un dispositivo.
