@@ -1,8 +1,20 @@
-# Mars Photos — Cómo obtener datos de Internet
+# Mars Photos — repositorio, DI manual y pruebas
 
-Aplicación Android en Kotlin y Jetpack Compose desarrollada siguiendo el [codelab oficial de Google](https://developer.android.com/codelabs/basic-android-kotlin-compose-getting-data-internet?hl=es-419). Consulta un servicio REST, convierte su respuesta JSON en objetos Kotlin y muestra la cantidad de fotografías recuperadas.
+Aplicación Android en Kotlin y Jetpack Compose ampliada conforme al [codelab oficial de Google sobre repositorios e inyección manual de dependencias](https://developer.android.com/codelabs/basic-android-kotlin-compose-add-repository?hl=es-419). La base conserva el historial del proyecto personal de obtención de datos de Internet.
 
-El resultado de esta práctica es un mensaje `Success: <cantidad> Mars photos retrieved`, acompañado por estados de carga y error. La cantidad se calcula con el tamaño de la lista recibida. No se implementan la cuadrícula, la descarga visual de fotografías ni funcionalidades de los codelabs posteriores.
+La aplicación separa las capas de interfaz y datos mediante `MarsPhotosRepository`; crea dependencias en `DefaultAppContainer` y las proporciona a `MarsViewModel` desde `MarsPhotosApplication`. Incluye pruebas locales de repositorio y ViewModel con dependencias falsas.
+
+El resultado visual mantiene el mensaje `Success: <cantidad> Mars photos retrieved`, acompañado por estados de carga y error. No se implementan la cuadrícula, la descarga visual de fotografías ni funcionalidades de codelabs posteriores.
+
+## Arquitectura añadida
+
+`MarsPhotosApplication` inicializa `DefaultAppContainer`, que crea `MarsApiService` con Retrofit y provee `NetworkMarsPhotosRepository`. `MarsViewModel.Factory` inyecta la interfaz `MarsPhotosRepository`. Los fakes y las pruebas se encuentran en `app/src/test/java/com/example/marsphotos`.
+
+La rama `codelab-repositorio-di` conserva el historial de `main` y registra commits incrementales en español. [Ver proyecto en GitHub](https://github.com/diegocalva04/MarsPhotos-ObtenerDatosInternet-Android/tree/codelab-repositorio-di).
+
+## Validación de la ampliación
+
+Se ejecutaron `testDebugUnitTest`, `assembleDebug` y `lintDebug`; las tres tareas finalizaron correctamente. En el teléfono Xiaomi 23100RN82L con Android 15 se observó `Success: 838 Mars photos retrieved`. La captura de esta compilación se conserva en `docs/evidencias/06-inyeccion-manual.png`. El conteo representa la respuesta observada durante la prueba y no un valor fijo.
 
 ## Tecnologías
 
@@ -58,3 +70,4 @@ El [registro de validación](docs/VALIDACION.md) distingue las comprobaciones in
 El código de partida procede del [repositorio oficial de Google, rama starter](https://github.com/google-developer-training/basic-android-kotlin-compose-training-mars-photos/tree/starter), y la comparación final utiliza [repo-starter](https://github.com/google-developer-training/basic-android-kotlin-compose-training-mars-photos/tree/repo-starter). Se conserva su licencia Apache 2.0 en `LICENSE`.
 
 La carpeta original contenía una plantilla Android sin Git. El primer commit conserva esa plantilla y los siguientes registran el desarrollo progresivo en español. Consulta el [historial por etapas](docs/HISTORIAL.md), el [análisis de los once apartados](docs/CODELAB.md) y `git log --reverse --format=fuller` para ver el historial completo con cuerpos explicativos.
+
