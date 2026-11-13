@@ -61,3 +61,18 @@ El APK de desarrollo se generó localmente en `app/build/outputs/apk/debug/app-d
 | Compilación posterior a la corrección | Gradle 9.5.0: BUILD SUCCESSFUL; Lint: 0 errores, 25 advertencias. La advertencia del compilador sobre statusBarColor desaparece al retirar el bloque antiguo. |
 
 La primera sesión no atribuyó ningún conteo al servidor. En la sesión gráfica sí se observaron 838 registros, con evidencia de pantalla y comprobación del endpoint. Las demostraciones didácticas de versiones intermedias siguen señaladas como no ejecutadas. No se añadieron mecanismos de recuperación automática, pruebas nuevas ni funcionalidades ajenas al codelab.
+
+## Validación del repositorio y la inyección manual
+
+La ampliación se realizó sobre un clon local separado de `main` en la rama `codelab-repositorio-di`, iniciada en `36c7414`. No se modificó el repositorio GitHub remoto.
+
+| Comprobación | Resultado |
+| --- | --- |
+| `:app:assembleDebug` después de añadir el repositorio | `BUILD SUCCESSFUL`. |
+| `:app:assembleDebug` después de integrar la fábrica del ViewModel | `BUILD SUCCESSFUL`. |
+| `:app:testDebugUnitTest` después de la prueba de repositorio | `BUILD SUCCESSFUL`; la prueba de `NetworkMarsPhotosRepository` aprobó. |
+| `:app:testDebugUnitTest :app:assembleDebug :app:lintDebug` al finalizar | `BUILD SUCCESSFUL`. Tres pruebas locales, cero fallos, cero errores y cero omitidas: una prueba de ejemplo preexistente, la prueba de repositorio y la prueba de ViewModel. |
+| Aplicación en teléfono | APK instalado en Xiaomi 23100RN82L, Android 15/API 35. La jerarquía de interfaz del dispositivo mostró `Success: 838 Mars photos retrieved`; proceso de la app activo. |
+| Captura final de la aplicación | `docs/evidencias/06-inyeccion-manual.png`, tomada del dispositivo después de ejecutar el APK de esta rama. |
+
+El número 838 corresponde a la respuesta observada durante esta ejecución y puede variar si cambia el servicio. La prueba gráfica de esta ampliación comprobó el estado Success. No se volvió a probar modo avión ni recuperación sin red; esas evidencias del proyecto anterior se conservan en su registro histórico. No se ejecutaron pruebas instrumentadas.

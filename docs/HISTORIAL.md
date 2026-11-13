@@ -29,3 +29,20 @@ git log --reverse --format=fuller main
 ```
 
 Los puntos intermedios conservan deliberadamente la secuencia didáctica. El servicio inicialmente devuelve String y todavía no declara permiso de Internet; la sustitución del conversor y la adaptación del mensaje se registran en etapas consecutivas. El código final es el que se compila y publica en `main`. Se probaron gráficamente sus estados Loading, Success y Error y la recuperación al relanzar; las demostraciones de las versiones intermedias permanecen sin ejecutar.
+
+## Commits de la ampliación de repositorio y DI
+
+Se clonó `diegocalva04/MarsPhotos-ObtenerDatosInternet-Android` en una carpeta nueva y se creó la rama local `codelab-repositorio-di` desde `main` (`36c7414`). El repositorio remoto no se modificó.
+
+| Hash | Mensaje | Cambios |
+| --- | --- | --- |
+| `0350d9c` | `feat: agregar repositorio para las fotografías de Marte` | Interfaz y repositorio de red; ViewModel llama al repositorio. |
+| `3c7816a` | `feat: agregar contenedor de dependencias y configurar Retrofit` | AppContainer, DefaultAppContainer, servicio Retrofit por constructor y retiro del singleton. |
+| `4c8862d` | `feat: vincular el contenedor de dependencias con la aplicación` | Inicialización del contenedor y registro en AndroidManifest. |
+| `7aff621` | `feat: inyectar el repositorio en MarsViewModel` | Fábrica de ViewModel y conexión desde Compose. |
+| `d9bade2` | `test: configurar dependencias para pruebas locales` | JUnit 4.13.2 y kotlinx-coroutines-test 1.7.1. |
+| `af1bc73` | `test: crear datos y servicio falsos para las pruebas` | FakeDataSource y FakeMarsApiService. |
+| `e6ec3ac` | `test: verificar la recuperación de fotos desde el repositorio` | Prueba de NetworkMarsPhotosRepository con runTest. |
+| `00dfaef` | `test: validar el estado Success de MarsViewModel` | Repositorio falso, TestDispatcherRule y prueba de estado Success. |
+
+El historial anterior de la práctica REST permanece sin reescritura. La ampliación se mantiene como commits locales en `codelab-repositorio-di` hasta que se decida su publicación.
