@@ -64,7 +64,7 @@ La primera sesión no atribuyó ningún conteo al servidor. En la sesión gráfi
 
 ## Validación del repositorio y la inyección manual
 
-La ampliación se realizó sobre un clon local separado de `main` en la rama `codelab-repositorio-di`, iniciada en `36c7414`. No se modificó el repositorio GitHub remoto.
+La ampliación se realizó sobre un clon local separado de `main` en la rama `codelab-repositorio-di`, iniciada en `36c7414`. La rama `codelab-repositorio-di` se publicó en GitHub para revisión; `main` permanece sin cambios.
 
 | Comprobación | Resultado |
 | --- | --- |
@@ -76,3 +76,4 @@ La ampliación se realizó sobre un clon local separado de `main` en la rama `co
 | Captura final de la aplicación | `docs/evidencias/06-inyeccion-manual.png`, tomada del dispositivo después de ejecutar el APK de esta rama. |
 
 El número 838 corresponde a la respuesta observada durante esta ejecución y puede variar si cambia el servicio. La prueba gráfica de esta ampliación comprobó el estado Success. No se volvió a probar modo avión ni recuperación sin red; esas evidencias del proyecto anterior se conservan en su registro histórico. No se ejecutaron pruebas instrumentadas.
+

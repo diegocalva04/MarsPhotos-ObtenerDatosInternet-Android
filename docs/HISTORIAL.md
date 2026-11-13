@@ -32,7 +32,7 @@ Los puntos intermedios conservan deliberadamente la secuencia didáctica. El ser
 
 ## Commits de la ampliación de repositorio y DI
 
-Se clonó `diegocalva04/MarsPhotos-ObtenerDatosInternet-Android` en una carpeta nueva y se creó la rama local `codelab-repositorio-di` desde `main` (`36c7414`). El repositorio remoto no se modificó.
+Se clonó `diegocalva04/MarsPhotos-ObtenerDatosInternet-Android` en una carpeta nueva y se creó la rama local `codelab-repositorio-di` desde `main` (`36c7414`). En el momento inicial del desarrollo, el repositorio remoto no se modificó; posteriormente se publicó la rama `codelab-repositorio-di` para revisión, sin modificar `main`.
 
 | Hash | Mensaje | Cambios |
 | --- | --- | --- |
@@ -45,4 +45,5 @@ Se clonó `diegocalva04/MarsPhotos-ObtenerDatosInternet-Android` en una carpeta 
 | `e6ec3ac` | `test: verificar la recuperación de fotos desde el repositorio` | Prueba de NetworkMarsPhotosRepository con runTest. |
 | `00dfaef` | `test: validar el estado Success de MarsViewModel` | Repositorio falso, TestDispatcherRule y prueba de estado Success. |
 
-El historial anterior de la práctica REST permanece sin reescritura. La ampliación se mantiene como commits locales en `codelab-repositorio-di` hasta que se decida su publicación.
+El historial anterior de la práctica REST permanece sin reescritura. La ampliación está publicada como commits incrementales en la rama `codelab-repositorio-di`, disponible en https://github.com/diegocalva04/MarsPhotos-ObtenerDatosInternet-Android/tree/codelab-repositorio-di.
+

@@ -10,7 +10,7 @@ El resultado visual mantiene el mensaje `Success: <cantidad> Mars photos retriev
 
 `MarsPhotosApplication` inicializa `DefaultAppContainer`, que crea `MarsApiService` con Retrofit y provee `NetworkMarsPhotosRepository`. `MarsViewModel.Factory` inyecta la interfaz `MarsPhotosRepository`. Los fakes y las pruebas se encuentran en `app/src/test/java/com/example/marsphotos`.
 
-La rama local `codelab-repositorio-di` conserva el historial de `main` y registra commits incrementales en español. Los cambios de esta rama todavía no se han publicado en GitHub.
+La rama `codelab-repositorio-di` conserva el historial de `main` y registra commits incrementales en español. [Ver proyecto en GitHub](https://github.com/diegocalva04/MarsPhotos-ObtenerDatosInternet-Android/tree/codelab-repositorio-di).
 
 ## Validación de la ampliación
 
@@ -70,3 +70,4 @@ El [registro de validación](docs/VALIDACION.md) distingue las comprobaciones in
 El código de partida procede del [repositorio oficial de Google, rama starter](https://github.com/google-developer-training/basic-android-kotlin-compose-training-mars-photos/tree/starter), y la comparación final utiliza [repo-starter](https://github.com/google-developer-training/basic-android-kotlin-compose-training-mars-photos/tree/repo-starter). Se conserva su licencia Apache 2.0 en `LICENSE`.
 
 La carpeta original contenía una plantilla Android sin Git. El primer commit conserva esa plantilla y los siguientes registran el desarrollo progresivo en español. Consulta el [historial por etapas](docs/HISTORIAL.md), el [análisis de los once apartados](docs/CODELAB.md) y `git log --reverse --format=fuller` para ver el historial completo con cuerpos explicativos.
+
